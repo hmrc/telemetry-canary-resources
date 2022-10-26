@@ -4,7 +4,8 @@
 
 ## Table of Contents
 * [Overview](#Overview)
-* [Linking the repository](#Linking-the-repository)
+* [Initialising a repository](#Initialising-a-repository)
+* [Linking an existing repository](#Linking-an-existing-repository)
 * [Updating the repository](#Updating-the-repository)
 * [References](#References)
 * [License](#License)
@@ -21,7 +22,31 @@ the canary repo.
 skip = [".bandit"]
 ```
 
-## Linking the repository
+## Initialising a repository
+
+If you have a new "empty" repository created by the [Jenkins build job](https://build.tax.service.gov.uk/job/PlatOps/job/Tools/job/create-a-repository/)
+then it is possible to seed that repo with the contents of a cruft template repository. Follow the instructions in this
+[Confluence article](https://confluence.tools.tax.service.gov.uk/display/TEL/How+to+initialise+a+repository+with+Cruft)
+for an example.
+
+```shell
+# Script used in article
+git clone git@hmrc:hmrc/aws-canary-telemetry-grafana
+cd aws-canary-telemetry-grafana
+git checkout -b TEL-3166-add-cruft
+cd ..
+cruft create --overwrite-if-exists https://github.com/hmrc/telemetry-canary-resources
+cd aws-canary-telemetry-grafana
+git add .
+git status
+git commit -a -m "TEL-3166: add cruft" -m "Co-authored-by: Lee Myring <29373851+thinkstack@users.noreply.github.com>"
+poetry init
+# Team Telemetry <telemetry@digital.hmrc.gov.uk>
+git add .
+git commit -a -m "TEL-3166: add poetry" -m "Co-authored-by: Lee Myring <29373851+thinkstack@users.noreply.github.com>"
+```
+
+## Linking an existing repository
 
 The repository is meant to be used as a cookiecutter source inside the `aws-canary-telemetry-*` repos. To add the templates
 to the consuming repository, follow the procedure below.
