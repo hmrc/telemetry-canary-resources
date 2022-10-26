@@ -25,9 +25,7 @@ skip = [".bandit"]
 ## Initialising a repository
 
 If you have a new "empty" repository created by the [Jenkins build job](https://build.tax.service.gov.uk/job/PlatOps/job/Tools/job/create-a-repository/)
-then it is possible to seed that repo with the contents of a cruft template repository. Follow the instructions in this
-[Confluence article](https://confluence.tools.tax.service.gov.uk/display/TEL/How+to+initialise+a+repository+with+Cruft)
-for an example.
+then it is possible to seed that repo with the contents of a cruft template repository. Follow the instructions in this Confluence article [Using Cruft to initialise a new repository](https://confluence.tools.tax.service.gov.uk/display/TEL/Using+Cruft+to+initialise+a+new+repository) for guidance.
 
 ```shell
 # Script used in article
@@ -85,6 +83,8 @@ cruft diff | git apply
 ```
 
 ## Updating the repository
+
+Follow the instructions in this Confluence article [Using Cruft to update an existing repository](https://confluence.tools.tax.service.gov.uk/display/TEL/Using+Cruft+to+update+an+existing+repository) for guidance.
 
 ```shell
 cruft check
