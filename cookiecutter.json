@@ -2,6 +2,7 @@
   "bandit_skip_tests": "",
   "custom_makefile_name": "",
   "canary_artifacts_bucket": "telemetry-internal-base-canary-artifacts",
+  "canary_lambda_bucket": "telemetry-internal-base-lambda-artifacts",
   "canary_entrypoint": "handler.canary_handler",
   "canary_repo_name": null,
   "canary_repo_name_formatted": "{{ cookiecutter.canary_repo_name|lower|replace(' ', '-') }}",
