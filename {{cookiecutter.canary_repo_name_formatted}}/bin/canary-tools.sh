@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+### WARNING! This is a generated file and should ONLY be edited in https://github.com/hmrc/telemetry-canary-resources
+
 # A helper tool to assist us maintaining canary functions
 # Intention here is to keep this files and all its functions reusable for all Telemetry repositories
 
@@ -14,7 +16,7 @@ CANARY_ZIP_NAME="canary.zip"
 PATH_BUILD="${BASE_LOCATION}/build"
 PROJECT_FULL_NAME="{{ cookiecutter.canary_repo_name_formatted }}"
 
-S3_TELEMETRY_CANARY_ROOT="{{ cookiecutter.canary_lambda_bucket }}"
+S3_TELEMETRY_CANARY_ROOT="{{ cookiecutter.canary_artifacts_bucket }}"
 S3_CANARY_SUB_FOLDER="build-${PROJECT_FULL_NAME}"
 S3_ADDRESS="s3://${S3_TELEMETRY_CANARY_ROOT}/${S3_CANARY_SUB_FOLDER}"
 
